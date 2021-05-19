@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Films</title>
+	<title>Supercondriaque</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../../css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="../../css/barre.css">
@@ -26,11 +26,7 @@
 </br>
 	</br>
 
-    <script src="https://cdn.plyr.io/3.6.8/plyr.polyfilled.js"></script>
-	<script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
-<script>
-  const player = new Plyr('#player');
-</script>
+    
 
 
 
@@ -45,27 +41,38 @@
 </br>
 </br>
 
-	
-	
-	
-         <video id="player" playsinline controls data-poster="Affiche.png">
-  <source src="Bande_Annonce.mp4" type="video/mp4" />
+         <video height="100%" width="100%"
+            controls
+            crossorigin
+            playsinline
+            data-poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg"
+            id="player"
+          >
+            <!-- Video files -->
+            <source
+              src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4"
+              type="video/mp4"
+              size="576"
+            />
+            
 
+            <!-- Caption files -->
+            <track
+              kind="captions"
+              label="English"
+              srclang="en"
+              src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt"
+              default
+            />
+            <track
+              kind="captions"
+              label="Français"
+              srclang="fr"
+              src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.fr.vtt"
+            />
 
-  <!-- Captions are optional -->
-  <track kind="captions" label="English captions" src="/path/to/captions.vtt" srclang="en" default />
-</video>
-
-
-
-
-
-	
-
-
-
-
-
+            
+          </video>
 
 </div>
 
