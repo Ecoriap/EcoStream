@@ -1,5 +1,5 @@
 let suggestions = [
-    "Harry Potter",
+    "Harry Potter | FR",
     "Supercondriaque",
     "CodingNepal",
     "YouTube",
