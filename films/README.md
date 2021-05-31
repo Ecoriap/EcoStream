@@ -5,3 +5,4 @@
   - [x] Supercondriaque
   - [ ] Dark Phoenix
   - [x] Astérix et Obélix : Mission Cléopâtre
+  - [x] Demon Slayer
