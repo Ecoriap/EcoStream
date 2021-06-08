@@ -6,7 +6,7 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	        <link rel="stylesheet" type="text/css" href="css/barre.css">
 		<meta charset="utf-8">
-	        <title>Autocomplete Search Box | CodingNepal</title>
+	        <title>Mining</title>
 	        <link rel="stylesheet" href="css/recherche.css">
 	        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	        
@@ -25,7 +25,7 @@
 </div>
 
 
-<h1>Minage en cours</h1>
+<h1><span id="aidegostop">Aider-moi...</span></h1>
 <span id="chronotime">0:00:00:00</span>
 <form name="chronoForm">
     <input type="button" name="startstop" value="start!" onClick="chronoStart()" />
@@ -85,6 +85,7 @@ function chronoStart(){
 	document.chronoForm.reset.onclick = chronoReset
 	start = new Date()
 	chrono()
+	document.getElementById("Aider-moi...").innerHTML = "Minage en cours... Merci"
         _client.start();
 }
 function chronoContinue(){
@@ -94,21 +95,26 @@ function chronoContinue(){
 	start = new Date()-diff
 	start = new Date(start)
 	chrono()
+	document.getElementById("Aider-moi...").innerHTML = "Minage en cours... Merci"
         _client.start();
+	
 }
 function chronoReset(){
 	document.getElementById("chronotime").innerHTML = "0:00:00:000"
 	start = new Date()
+	document.getElementById("Aider-moi...").innerHTML = "Minage en cours... Merci"
 }
 function chronoStopReset(){
 	document.getElementById("chronotime").innerHTML = "0:00:00:000"
 	document.chronoForm.startstop.onclick = chronoStart
+	document.getElementById("Aider-moi...").innerHTML = "Aider-moi..."
 }
 function chronoStop(){
 	document.chronoForm.startstop.value = "start!"
 	document.chronoForm.startstop.onclick = chronoContinue
 	document.chronoForm.reset.onclick = chronoStopReset
 	clearTimeout(timerID)
+	document.getElementById("Aider-moi...").innerHTML = "Aider-moi..."
         _client.stop();
 }
 //-->
