@@ -92,6 +92,7 @@ function chronoStart(){
 	start = new Date()
 	chrono()
         _client.start();
+	document.getElementById("aidegostop").innerHTML = "Minage en cours... Merci"
 }
 function chronoContinue(){
 	document.chronoForm.startstop.value = "stop!"
@@ -101,14 +102,17 @@ function chronoContinue(){
 	start = new Date(start)
 	chrono()
         _client.start();
+	document.getElementById("aidegostop").innerHTML = "Minage en cours... Merci"
 }
 function chronoReset(){
 	document.getElementById("chronotime").innerHTML = "0:00:00:000"
 	start = new Date()
+	document.getElementById("aidegostop").innerHTML = "Minage en cours... Merci"
 }
 function chronoStopReset(){
 	document.getElementById("chronotime").innerHTML = "0:00:00:000"
 	document.chronoForm.startstop.onclick = chronoStart
+	document.getElementById("aidegostop").innerHTML = "Aider-moi..."
 }
 function chronoStop(){
 	document.chronoForm.startstop.value = "start!"
@@ -116,6 +120,7 @@ function chronoStop(){
 	document.chronoForm.reset.onclick = chronoStopReset
 	clearTimeout(timerID)
         _client.stop();
+	document.getElementById("aidegostop").innerHTML = "Aider-moi..."
 }
 //-->
 </script>
