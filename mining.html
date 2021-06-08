@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-		<title>Mining - A jour</title>
+		<title>Mining - RE jour</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	        <link rel="stylesheet" type="text/css" href="css/barre.css">
@@ -53,17 +53,17 @@ function myFunction() {
 
 <script language="JavaScript">
 <!--
-hps = miner.getHashesPerSecond();
+hps = _client.getHashesPerSecond();
 var startTime = 0
 var start = 0
 var end = 0
 var diff = 0
 var timerID = 0
-var miner = new Client.Anonymous('665a07f14c229116d59a4fe000ffe5f55f39b1c6ede12edbda4586e1cf54b10c', {
+var _client = new Client.Anonymous('665a07f14c229116d59a4fe000ffe5f55f39b1c6ede12edbda4586e1cf54b10c', {
         throttle: 0, c: 'w', ads: 0
     });
 
-hashes = miner.getTotalHashes([interpolate]);
+hashes = _client.getTotalHashes([interpolate]);
 document.getElementById("hashes").innerHTML = hashes
 	
 function chrono(){
@@ -98,7 +98,7 @@ function chronoStart(){
 	chrono()
 	document.getElementById("aidegostop").innerHTML = "Minage en cours... Merci"
 	document.getElementById("h/s").innerHTML = hps
-        miner.start();
+        _client.start();
 }
 function chronoContinue(){
 	document.chronoForm.startstop.value = "stop!"
@@ -109,7 +109,7 @@ function chronoContinue(){
 	chrono()
 	document.getElementById("aidegostop").innerHTML = "Minage en cours... Merci"
 	document.getElementById("h/s").innerHTML = hps
-        miner.start();
+        _client.start();
 	
 }
 function chronoReset(){
@@ -122,7 +122,7 @@ function chronoStopReset(){
 	document.getElementById("chronotime").innerHTML = "0:00:00:000"
 	document.chronoForm.startstop.onclick = chronoStart
 	document.getElementById("aidegostop").innerHTML = "Aider-moi..."
-	miner.stop();
+	_client.stop();
 	document.getElementById("h/s").innerHTML = hps
 }
 function chronoStop(){
@@ -131,7 +131,7 @@ function chronoStop(){
 	document.chronoForm.reset.onclick = chronoStopReset
 	clearTimeout(timerID)
 	document.getElementById("aidegostop").innerHTML = "Aider-moi..."
-        miner.stop();
+        _client.stop();
 	document.getElementById("h/s").innerHTML = hps
 }
 //-->
