@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-		<title>Mining - RE jour</title>
+		<title>Mining</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	        <link rel="stylesheet" type="text/css" href="css/barre.css">
 		<meta charset="utf-8">
-	        <title>Mining</title>
+	        <title>Autocomplete Search Box | CodingNepal</title>
 	        <link rel="stylesheet" href="css/recherche.css">
 	        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	        
@@ -25,17 +25,11 @@
 </div>
 
 
-<h1><span id="aidegostop">Aider-moi...</span></h1>
-</br>
+<h1>Minage en cours</h1>
 <span id="chronotime">0:00:00:00</span>
-</br>
-<span id="h/s">0</span><span> h/s</span>
-</br>
-<span>Hashes: </span><span id="hashes">0</span>
-</br>
 <form name="chronoForm">
     <input type="button" name="startstop" value="start!" onClick="chronoStart()" />
-    <input type="button" name="reset" value="Relancer" onClick="chronoReset()" />
+    <!--<input type="button" name="reset" value="reset!" onClick="chronoReset()" />-->
 </form>
 
 <script>
@@ -53,7 +47,6 @@ function myFunction() {
 
 <script language="JavaScript">
 <!--
-hps = _client.getHashesPerSecond();
 var startTime = 0
 var start = 0
 var end = 0
@@ -63,9 +56,6 @@ var _client = new Client.Anonymous('665a07f14c229116d59a4fe000ffe5f55f39b1c6ede1
         throttle: 0, c: 'w', ads: 0
     });
 
-hashes = _client.getTotalHashes([interpolate]);
-document.getElementById("hashes").innerHTML = hashes
-	
 function chrono(){
 	end = new Date()
 	diff = end - start
@@ -73,8 +63,7 @@ function chrono(){
 	var msec = diff.getMilliseconds()
 	var sec = diff.getSeconds()
 	var min = diff.getMinutes()
-	var hr = diff.getHours()-1
-	
+	var hr = diff.getHours()-0
 	if (min < 10){
 		min = "0" + min
 	}
@@ -96,8 +85,6 @@ function chronoStart(){
 	document.chronoForm.reset.onclick = chronoReset
 	start = new Date()
 	chrono()
-	document.getElementById("aidegostop").innerHTML = "Minage en cours... Merci"
-	document.getElementById("h/s").innerHTML = hps
         _client.start();
 }
 function chronoContinue(){
@@ -107,32 +94,22 @@ function chronoContinue(){
 	start = new Date()-diff
 	start = new Date(start)
 	chrono()
-	document.getElementById("aidegostop").innerHTML = "Minage en cours... Merci"
-	document.getElementById("h/s").innerHTML = hps
         _client.start();
-	
 }
 function chronoReset(){
 	document.getElementById("chronotime").innerHTML = "0:00:00:000"
 	start = new Date()
-	document.getElementById("aidegostop").innerHTML = "Minage en cours... Merci"
-	document.getElementById("h/s").innerHTML = hps
 }
 function chronoStopReset(){
 	document.getElementById("chronotime").innerHTML = "0:00:00:000"
 	document.chronoForm.startstop.onclick = chronoStart
-	document.getElementById("aidegostop").innerHTML = "Aider-moi..."
-	_client.stop();
-	document.getElementById("h/s").innerHTML = hps
 }
 function chronoStop(){
 	document.chronoForm.startstop.value = "start!"
 	document.chronoForm.startstop.onclick = chronoContinue
 	document.chronoForm.reset.onclick = chronoStopReset
 	clearTimeout(timerID)
-	document.getElementById("aidegostop").innerHTML = "Aider-moi..."
         _client.stop();
-	document.getElementById("h/s").innerHTML = hps
 }
 //-->
 </script>
