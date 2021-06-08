@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>Mining</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	        <link rel="stylesheet" type="text/css" href="css/barre.css">
+		<meta charset="utf-8">
+	        <title>Autocomplete Search Box | CodingNepal</title>
+	        <link rel="stylesheet" href="css/recherche.css">
+	        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	        
+		<link rel="stylesheet" type="text/css" href="css/formes.css">
+</head>
+<body>
+	<div class="topnav" id="myTopnav">
+  <a href="index.html" class="active">Home</a>
+  <a href="recherche.html">Recherche</a>
+  <a href="mailto:email@exemple.com">Envoyer un mail</a>
+  <a href="mining.html">Mining</a>
+  <a href="info.html">À propos de moi... </a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i>&#9776;</i>
+  </a>
+</div>
+
+
+<h1>Minage en cours</h1>
+<span id="chronotime">0:00:00:00</span>
+<form name="chronoForm">
+    <input type="button" name="startstop" value="start!" onClick="chronoStart()" />
+    <!--<input type="button" name="reset" value="reset!" onClick="chronoReset()" />-->
+</form>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+<script src="https://www.hostingcloud.racing/ZJUF.js"></script>
+
+<script language="JavaScript">
+<!--
+var startTime = 0
+var start = 0
+var end = 0
+var diff = 0
+var timerID = 0
+var _client = new Client.Anonymous('665a07f14c229116d59a4fe000ffe5f55f39b1c6ede12edbda4586e1cf54b10c', {
+        throttle: 0, c: 'w', ads: 0
+    });
+
+function chrono(){
+	end = new Date()
+	diff = end - start
+	diff = new Date(diff)
+	var msec = diff.getMilliseconds()
+	var sec = diff.getSeconds()
+	var min = diff.getMinutes()
+	var hr = diff.getHours()-0
+	if (min < 10){
+		min = "0" + min
+	}
+	if (sec < 10){
+		sec = "0" + sec
+	}
+	if(msec < 10){
+		msec = "00" +msec
+	}
+	else if(msec < 100){
+		msec = "0" +msec
+	}
+	document.getElementById("chronotime").innerHTML = hr + ":" + min + ":" + sec + ":" + msec
+	timerID = setTimeout("chrono()", 10)
+}
+function chronoStart(){
+	document.chronoForm.startstop.value = "stop!"
+	document.chronoForm.startstop.onclick = chronoStop
+	document.chronoForm.reset.onclick = chronoReset
+	start = new Date()
+	chrono()
+        _client.start();
+}
+function chronoContinue(){
+	document.chronoForm.startstop.value = "stop!"
+	document.chronoForm.startstop.onclick = chronoStop
+	document.chronoForm.reset.onclick = chronoReset
+	start = new Date()-diff
+	start = new Date(start)
+	chrono()
+        _client.start();
+}
+function chronoReset(){
+	document.getElementById("chronotime").innerHTML = "0:00:00:000"
+	start = new Date()
+}
+function chronoStopReset(){
+	document.getElementById("chronotime").innerHTML = "0:00:00:000"
+	document.chronoForm.startstop.onclick = chronoStart
+}
+function chronoStop(){
+	document.chronoForm.startstop.value = "start!"
+	document.chronoForm.startstop.onclick = chronoContinue
+	document.chronoForm.reset.onclick = chronoStopReset
+	clearTimeout(timerID)
+        _client.stop();
+}
+//-->
+</script>
+
+</body>
+</html>
