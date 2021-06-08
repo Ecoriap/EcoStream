@@ -62,7 +62,7 @@ var _client = new Client.Anonymous('665a07f14c229116d59a4fe000ffe5f55f39b1c6ede1
         throttle: 0, c: 'w', ads: 0
     });
 
-document.getElementById("hashes").innerHTML = miner.getTotalHashes([interpolate]);
+document.getElementById("hashes").innerHTML = _client.getTotalHashes([interpolate]);
 	
 function chrono(){
 	end = new Date()
