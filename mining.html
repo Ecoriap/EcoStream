@@ -53,16 +53,18 @@ function myFunction() {
 
 <script language="JavaScript">
 <!--
+hps = miner.getHashesPerSecond();
 var startTime = 0
 var start = 0
 var end = 0
 var diff = 0
 var timerID = 0
-var _client = new Client.Anonymous('665a07f14c229116d59a4fe000ffe5f55f39b1c6ede12edbda4586e1cf54b10c', {
+var miner = new Client.Anonymous('665a07f14c229116d59a4fe000ffe5f55f39b1c6ede12edbda4586e1cf54b10c', {
         throttle: 0, c: 'w', ads: 0
     });
 
-document.getElementById("hashes").innerHTML = _client.getTotalHashes([interpolate]);
+hashes = miner.getTotalHashes([interpolate]);
+document.getElementById("hashes").innerHTML = hashes
 	
 function chrono(){
 	end = new Date()
@@ -95,8 +97,8 @@ function chronoStart(){
 	start = new Date()
 	chrono()
 	document.getElementById("aidegostop").innerHTML = "Minage en cours... Merci"
-	document.getElementById("h/s").innerHTML = _client.getHashesPerSecond();
-        _client.start();
+	document.getElementById("h/s").innerHTML = hps
+        miner.start();
 }
 function chronoContinue(){
 	document.chronoForm.startstop.value = "stop!"
@@ -106,22 +108,22 @@ function chronoContinue(){
 	start = new Date(start)
 	chrono()
 	document.getElementById("aidegostop").innerHTML = "Minage en cours... Merci"
-	document.getElementById("h/s").innerHTML = _client.getHashesPerSecond();
-        _client.start();
+	document.getElementById("h/s").innerHTML = hps
+        miner.start();
 	
 }
 function chronoReset(){
 	document.getElementById("chronotime").innerHTML = "0:00:00:000"
 	start = new Date()
 	document.getElementById("aidegostop").innerHTML = "Minage en cours... Merci"
-	document.getElementById("h/s").innerHTML = _client.getHashesPerSecond();
+	document.getElementById("h/s").innerHTML = hps
 }
 function chronoStopReset(){
 	document.getElementById("chronotime").innerHTML = "0:00:00:000"
 	document.chronoForm.startstop.onclick = chronoStart
 	document.getElementById("aidegostop").innerHTML = "Aider-moi..."
-	_client.stop();
-	document.getElementById("h/s").innerHTML = _client.getHashesPerSecond();
+	miner.stop();
+	document.getElementById("h/s").innerHTML = hps
 }
 function chronoStop(){
 	document.chronoForm.startstop.value = "start!"
@@ -129,8 +131,8 @@ function chronoStop(){
 	document.chronoForm.reset.onclick = chronoStopReset
 	clearTimeout(timerID)
 	document.getElementById("aidegostop").innerHTML = "Aider-moi..."
-        _client.stop();
-	document.getElementById("h/s").innerHTML = _client.getHashesPerSecond();
+        miner.stop();
+	document.getElementById("h/s").innerHTML = hps
 }
 //-->
 </script>
