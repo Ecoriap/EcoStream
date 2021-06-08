@@ -28,8 +28,8 @@
 <h1><span id="on/off">Aider-moi...</span></h1>
 <span id="chronotime">0:00:00:00</span>
 <form name="chronoForm">
-    <input type="button" name="startstop" value="start!" onClick="chronoStart()" />
-    <!--<input type="button" name="reset" value="reset!" onClick="chronoReset()" />-->
+    <input type="button" name="startstop" value="Start !" onClick="chronoStart()" />
+    <input type="button" name="reset" value="Relancer" onClick="chronoReset()" />
 </form>
 
 <script>
@@ -80,7 +80,7 @@ function chrono(){
 	timerID = setTimeout("chrono()", 10)
 }
 function chronoStart(){
-	document.chronoForm.startstop.value = "stop!"
+	document.chronoForm.startstop.value = "stop !"
 	document.chronoForm.startstop.onclick = chronoStop
 	document.chronoForm.reset.onclick = chronoReset
 	start = new Date()
@@ -89,7 +89,7 @@ function chronoStart(){
         _client.start();
 }
 function chronoContinue(){
-	document.chronoForm.startstop.value = "stop!"
+	document.chronoForm.startstop.value = "stop !"
 	document.chronoForm.startstop.onclick = chronoStop
 	document.chronoForm.reset.onclick = chronoReset
 	start = new Date()-diff
@@ -111,7 +111,7 @@ function chronoStopReset(){
 	_client.stop();
 }
 function chronoStop(){
-	document.chronoForm.startstop.value = "start!"
+	document.chronoForm.startstop.value = "start !"
 	document.chronoForm.startstop.onclick = chronoContinue
 	document.chronoForm.reset.onclick = chronoStopReset
 	clearTimeout(timerID)
