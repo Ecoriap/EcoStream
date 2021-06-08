@@ -101,7 +101,7 @@ function chronoContinue(){
 }
 function chronoReset(){
 	document.getElementById("chronotime").innerHTML = "0:00:00:000"
-	document.getElementById("on/off").innerHTML = "Minage crypto en cours... Merci"
+	document.getElementById("on/off").innerHTML = "Aider-moi..."
 	start = new Date()
         _client.start();
 }
@@ -109,7 +109,7 @@ function chronoStopReset(){
 	document.getElementById("chronotime").innerHTML = "0:00:00:000"
 	document.chronoForm.startstop.onclick = chronoStart
 	document.getElementById("on/off").innerHTML = "Aider-moi..."
-	_client.stop();
+	_client.start();
 }
 function chronoStop(){
 	document.chronoForm.startstop.value = "start !"
