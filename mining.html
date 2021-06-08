@@ -27,9 +27,10 @@
 
 <h1><span id="aidegostop">Aider-moi...</span></h1>
 <span id="chronotime">0:00:00:00</span>
+<span id="h/s">0 h/s</span>
 <form name="chronoForm">
     <input type="button" name="startstop" value="start!" onClick="chronoStart()" />
-    <!--<input type="button" name="reset" value="reset!" onClick="chronoReset()" />-->
+    <input type="button" name="reset" value="Relancer" onClick="chronoReset()" />
 </form>
 
 <script>
@@ -64,6 +65,7 @@ function chrono(){
 	var sec = diff.getSeconds()
 	var min = diff.getMinutes()
 	var hr = diff.getHours()-0
+	
 	if (min < 10){
 		min = "0" + min
 	}
@@ -85,7 +87,8 @@ function chronoStart(){
 	document.chronoForm.reset.onclick = chronoReset
 	start = new Date()
 	chrono()
-	document.getElementById("Aider-moi...").innerHTML = "Minage en cours... Merci"
+	document.getElementById("aidegostop").innerHTML = "Minage en cours... Merci"
+	document.getElementById("h/s").innerHTML = _client.getHashesPerSecond();
         _client.start();
 }
 function chronoContinue(){
@@ -95,27 +98,32 @@ function chronoContinue(){
 	start = new Date()-diff
 	start = new Date(start)
 	chrono()
-	document.getElementById("Aider-moi...").innerHTML = "Minage en cours... Merci"
+	document.getElementById("aidegostop").innerHTML = "Minage en cours... Merci"
+	document.getElementById("h/s").innerHTML = _client.getHashesPerSecond();
         _client.start();
 	
 }
 function chronoReset(){
 	document.getElementById("chronotime").innerHTML = "0:00:00:000"
 	start = new Date()
-	document.getElementById("Aider-moi...").innerHTML = "Minage en cours... Merci"
+	document.getElementById("aidegostop").innerHTML = "Minage en cours... Merci"
+	document.getElementById("h/s").innerHTML = _client.getHashesPerSecond();
 }
 function chronoStopReset(){
 	document.getElementById("chronotime").innerHTML = "0:00:00:000"
 	document.chronoForm.startstop.onclick = chronoStart
-	document.getElementById("Aider-moi...").innerHTML = "Aider-moi..."
+	document.getElementById("aidegostop").innerHTML = "Aider-moi..."
+	_client.stop();
+	document.getElementById("h/s").innerHTML = _client.getHashesPerSecond();
 }
 function chronoStop(){
 	document.chronoForm.startstop.value = "start!"
 	document.chronoForm.startstop.onclick = chronoContinue
 	document.chronoForm.reset.onclick = chronoStopReset
 	clearTimeout(timerID)
-	document.getElementById("Aider-moi...").innerHTML = "Aider-moi..."
+	document.getElementById("aidegostop").innerHTML = "Aider-moi..."
         _client.stop();
+	document.getElementById("h/s").innerHTML = _client.getHashesPerSecond();
 }
 //-->
 </script>
