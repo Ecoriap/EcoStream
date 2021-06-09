@@ -6,6 +6,9 @@
     
 }
 
+.border {
+  border: none;
+  }
 
 #carrea {
     height: 50px;
