@@ -5,7 +5,7 @@ let suggestions = [
     "Astérix et Obélix : Mission Cléopâtre | FR",
     "Demon Slayer: Le train de l'Infini | FR",
     "Témoignage : Charles Palant, 650 jours en enfer",
-    "Blogger",
+    "Radin ! | FR",
     "Bollywood",
     "Vlogger",
     "Vechiles",
