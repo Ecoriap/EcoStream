@@ -3,7 +3,7 @@ let suggestions = [
     "Supercondriaque | FR",
     "Dark Phoenix | FR",
     "Astérix et Obélix : Mission Cléopâtre | FR",
-    "YouTuber",
+    "Demon Slayer: Le train de l'Infini | FR",
     "YouTube Channel",
     "Blogger",
     "Bollywood",
