@@ -2,7 +2,7 @@ let suggestions = [
     "Harry Potter | FR",
     "Supercondriaque | FR",
     "Dark Phoenix | FR",
-    "YouTube",
+    "Astérix et Obélix : Mission Cléopâtre | FR",
     "YouTuber",
     "YouTube Channel",
     "Blogger",
