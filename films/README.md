@@ -6,4 +6,4 @@
   - [ ] Dark Phoenix
   - [x] Astérix et Obélix : Mission Cléopâtre
   - [x] Demon Slayer
-  - [ ] Témoignage : Charles Palant, 650 jours en enfer.
+  - [x] Témoignage : Charles Palant, 650 jours en enfer.
