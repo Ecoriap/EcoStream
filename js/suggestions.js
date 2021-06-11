@@ -6,7 +6,7 @@ let suggestions = [
     "Demon Slayer: Le train de l'Infini | FR",
     "Témoignage : Charles Palant, 650 jours en enfer",
     "Radin ! | FR",
-    "Bollywood",
+    "Mulan | FR",
     "Vlogger",
     "Vechiles",
     "Facebook",
